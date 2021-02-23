@@ -95,10 +95,13 @@ function Airplane(name) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. Global Binding
-    2. Implicit Binding
-    3. New Binding
-    4. Explicit Binding (.call , .apply)
+    1. Global Binding - this is not defined, computer thinks 'this' is everything in the window
+    2. Implicit Binding - most common rule, when function is invoked. 'this' will look to left of dot. Only applies obj with methods.
+    3. New Binding- using the 'new' keyword constructs a new obj and 'this' points to the new obj created to it. You have to pass arguments 1 by 1.
+    4. Explicit Binding 
+    (.call(immediately calls function, passes arguments one by one) , 
+    .apply(pass arguments as an array)
+    , .bind(pass in arguments 1 by 1, but does not immediately invoke function, returns brand new function that can be invoked later.))
   */
   
   
