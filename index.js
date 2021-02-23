@@ -74,6 +74,7 @@ Person.prototype.toString = function(){
 
 const personOne = new Person('Chelsea', 24);
   
+
   
   
   /*
@@ -83,6 +84,7 @@ const personOne = new Person('Chelsea', 24);
           + should initialize with an `tank` at 0
           + should initialize with an `odometer` at 0
       - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
+
       - STRETCH: Give cars ability to `.drive(distance)`. The distance driven:
           + Should cause the `odometer` to go up.
           + Should cause the the `tank` to go down taking `milesPerGallon` into account.
@@ -91,7 +93,9 @@ const personOne = new Person('Chelsea', 24);
   */
   
  function Car(model, milesPerGallon) {
-    
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  // this.tank = tank;
   }
   
   
