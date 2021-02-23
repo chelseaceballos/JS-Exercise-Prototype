@@ -4,7 +4,7 @@
     - All airplanes built with Airplane should initialize with an `isFlying` of false.
     - Give airplanes the ability to `.takeOff()` and `.land()`:
         + If a plane takes off, its `isFlying` property is set to true.
-        + If a plane lands, its `isFlying` property is set to false.
+        + If a plane lands, its `isFlying` property is set to false. xx
 */
 
 // EXAMPLE SOLUTION CODE:
@@ -28,21 +28,33 @@ function Airplane(name) {
   
   /*
     TASK 1
-      - Write a Person Constructor that initializes `name` and `age` from arguments.
-      - All instances of Person should initialize with an empty `stomach` array.
-      - Give instances of Person the ability to `.eat("someFood")`:
+      - Write a Person Constructor that initializes `name` and `age` from arguments. --> Name & Age inside function Parameters
+      - All instances of Person should initialize with an empty `stomach` array. --> create stomach array, empty
+      - Give instances of Person the ability to `.eat("someFood")`: --> Person.prototype.eat = function (){ this.eat = 10 items}
           + When eating an edible, it should be pushed into the `stomach`.
           + The `eat` method should have no effect if there are 10 items in the `stomach`.
-      - Give instances of Person the ability to `.poop()`:
+      - Give instances of Person the ability to `.poop()`: --> Person.prototype.poop = function () { this.poop = 'empty'}
           + When an instance poops, its `stomach` should empty.
-      - Give instances of Person a method `.toString()`:
+      - Give instances of Person a method `.toString()`: ---> Person.prototype.toString = function () {${name} , ${age}}
           + It should return a string with `name` and `age`. Example: "Mary, 50"
+
+
   */
   
- function Person() {
-    
+ function Person(name, age) {
+    // const stomach = [] ; {
+    //   Person.prototype.eat = function () {
+    //     this.eat = 10;
+    //   } ;
+    //   Person.prototype.poop = function () {
+    //     this.poop = 'empty';
+    //   } ;
+    //   Person.prototype.toString = function (){
+    //     this.toString = (${name} , ${age})
+    //   }
+    // }
   }
- 
+//  console.log(Person);
  
 
   
@@ -63,7 +75,7 @@ function Airplane(name) {
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
+ function Car(model, milesPerGallon) {
     
   }
   
@@ -83,10 +95,10 @@ function Airplane(name) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Global Binding
+    2. Implicit Binding
+    3. New Binding
+    4. Explicit Binding (.call , .apply)
   */
   
   
