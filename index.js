@@ -117,30 +117,32 @@ const personOne = new Person('Chelsea', 22);
     TASK 3
       - Write a Baby constructor sub classing Person. --> call person pass in this and attributes
 
-      - Besides `name` and `age`, Baby takes a third argument to initialize `favoriteToy`. --> create special attribute for favoriteToy
+      - Besides `name` and `age`, Baby takes a third argument to initialize `favoriteToy`. --> create special attribute for favoriteToy(OBJECT)
 
       - Besides the methods on Person.prototype, babies have the ability to `.play()`: -->
 
           + Should return a string "Playing with x", x being the favorite toy. -->
   */
- function Baby(attributes) {
-   Person.call(this, attributes)
-   this.favoriteToy = attributes.favoriteToy; //this is a special attribute that belongs only to BABY
-   this.favoriteToy = this.favoriteToy;
-  
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age, favoriteToy);
+   this.favoriteToy = favoriteToy; //this is a special attribute that belongs only to BABY
+   
+ 
   }
+
   //linking to Person prototype with Baby prototype
  Baby.prototype =Object.create(Person.prototype);
 
  //Give Baby ability to play
-  // Baby.prototype.play = function (){
-  //   console.log(`Playing with ${this.favoriteToy}`);
-  // }
+  Baby.prototype.play = function (){
+    return (`Playing with ${this.favoriteToy}`);
+  }
 
-  // const personOne = new BabyOne{
-    // name: 'Noah';
-    // favoriteToy: 'ball'
-  // }
+  const baby = new Person ({
+    name: 'Noah',
+    age: 1,
+    favoriteToy: 'ball',
+  });
 
 
 
@@ -148,13 +150,19 @@ const personOne = new Person('Chelsea', 22);
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. Global Binding - this is not defined, computer thinks 'this' is everything in the window
-    2. Implicit Binding - most common rule, when function is invoked. 'this' will look to left of dot. Only applies obj with methods.
+
+    1. Global/Window Binding - this is not defined, computer thinks 'this' will return everything in the window
+
+    2. Implicit Binding - 80% use cases. Most common rule, when function is invoked. 'this' will look to left of dot. Only applies obj with methods.
+    
     3. New Binding- using the 'new' keyword constructs a new obj and 'this' points to the new obj created to it. You have to pass arguments 1 by 1.
+
     4. Explicit Binding 
-    (.call(immediately calls function, passes arguments one by one) , 
-    .apply(pass arguments as an array)
-    , .bind(pass in arguments 1 by 1, but does not immediately invoke function, returns brand new function that can be invoked later.))
+    (.call(immediately calls function, passes arguments 1 by 1) , 
+
+    .apply(pass arguments as an array)-- not used in unit 1 , 
+
+    .bind(pass in arguments 1 by 1, but does not immediately invoke function, returns brand new function that can be invoked later.))
   */
   
   
