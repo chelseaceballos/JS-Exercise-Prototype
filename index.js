@@ -33,17 +33,16 @@ function Airplane(name) {
       - All instances of Person should initialize with an empty `stomach` array. --> create stomach array, empty
 
       - Give instances of Person the ability to `.eat("someFood")`: --> Person.prototype.eat = function (){ this.eat = 10 items}
-          + When eating an edible, it should be pushed into the `stomach`.
-          + The `eat` method should have no effect if there are 10 items in the `stomach`.
+          + When eating an edible, it should be pushed into the `stomach`. ---> push into stomach
+          + The `eat` method should have no effect if there are 10 items in the `stomach`. ---> if stomach.length < 10 , then push into stomach
 
-      - Give instances of Person the ability to `.poop()`: --> Person.prototype.poop = function () { this.poop = 'empty'
-          + When an instance poops, its `stomach` should empty.
+      - Give instances of Person the ability to `.poop()`: --> Person.prototype.poop = function () { this.stomach = []
+          + When an instance poops, its `stomach` should empty. 
 
-      - Give instances of Person a method `.toString()`: ---> Person.prototype.toString = function () {${name} , ${age}}
+      - Give instances of Person a method `.toString()`: ---> Person.prototype.toString = function () {${name} , ${age}; }
           + It should return a string with `name` and `age`. Example: "Mary, 50"
-
-
-  */
+  const personOne = new Person('Chelsea', 22);
+ */
   
  function Person(name, age) {
   this.name = name;
@@ -72,7 +71,7 @@ Person.prototype.toString = function(){
   return `${this.name}, ${this.age}`;
 }
 
-const personOne = new Person('Chelsea', 24);
+const personOne = new Person('Chelsea', 22);
   
 
   
@@ -96,14 +95,15 @@ const personOne = new Person('Chelsea', 24);
   this.model = model;
   this.milesPerGallon = milesPerGallon;
   this.tank = [];
+  this.odometer= [];
   }
-  //build an instance where a car has a tank and odometer---- should be empty array to = 0
+  //build an instance where a car has a tank and odometer---- should be  = 0
 
   Car.prototype.tank = function (){ // HAS NOT PASSED
-    this.tank = [] ;
+    this.tank = 0 ;
   }
   Car.prototype.odometer = function () { //HAS NOT PASSED
-    this.odometer = [];
+    this.odometer = 0 ;
   }
 
 //- Give car the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`. 
@@ -112,7 +112,7 @@ const personOne = new Person('Chelsea', 24);
       this.tank.push(gallons);
     }
   }
-
+// Fill method increases the tank by given gallons
   /*
     TASK 3
       - Write a Baby constructor sub classing Person. --> call person pass in this and attributes
@@ -125,21 +125,25 @@ const personOne = new Person('Chelsea', 24);
   */
  function Baby(attributes) {
    Person.call(this, attributes)
-   this.favoriteToy = attribute.favoriteToy; //this is a special attribute that belongs only to BABY
+   this.favoriteToy = attributes.favoriteToy; //this is a special attribute that belongs only to BABY
   }
   //linking to Person prototype with Baby prototype
  Baby.prototype =Object.create(Person.prototype);
  //Give Baby ability to play
   // Baby.prototype.play = function (){
   //   console.log(`Playing with ${this.favoriteToy}`);
-  // }
+  // // }
 
-  // const person = new Baby{
-  //   name: 'Baby Michael',
-  //   eat: 10,
-  //   poop: 'empty',
-  //   favoriteToy: 'ball',
-  // }
+  const personOne = new Baby {
+    // name: 'Ada';
+    // eat: 10;
+    // poop: 'empty';
+    // favoriteToy: 'ball'
+  }
+
+
+
+
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
