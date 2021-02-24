@@ -95,10 +95,24 @@ const personOne = new Person('Chelsea', 24);
  function Car(model, milesPerGallon) {
   this.model = model;
   this.milesPerGallon = milesPerGallon;
-  // this.tank = tank;
+  this.tank = [];
   }
-  
-  
+  //build an instance where a car has a tank and odometer---- should be empty array to = 0
+
+  Car.prototype.tank = function (){ // HAS NOT PASSED
+    this.tank = [] ;
+  }
+  Car.prototype.odometer = function () { //HAS NOT PASSED
+    this.odometer = [];
+  }
+
+//- Give car the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`. 
+  Car.prototype.fill = function (gallons) { //PASSED
+    if(this.tank.length < 30){
+      this.tank.push(gallons);
+    }
+  }
+
   /*
     TASK 3
       - Write a Baby constructor sub classing Person. --> call person pass in this and attributes
@@ -114,8 +128,8 @@ const personOne = new Person('Chelsea', 24);
    this.favoriteToy = attribute.favoriteToy; //this is a special attribute that belongs only to BABY
   }
   //linking to Person prototype with Baby prototype
-//  Baby.prototype = object.create(Person.prototype);
- // Give Baby ability to play
+ Baby.prototype =Object.create(Person.prototype);
+ //Give Baby ability to play
   // Baby.prototype.play = function (){
   //   console.log(`Playing with ${this.favoriteToy}`);
   // }
